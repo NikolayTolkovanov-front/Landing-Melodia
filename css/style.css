@@ -187,8 +187,11 @@ body {
 
 .main .flats path:hover {
   cursor: pointer;
-  opacity: 0.75;
-  fill: #6400ff;
+  opacity: 1;
+}
+
+.main .flats .current-floor {
+  opacity: 1;
 }
 
 .main .count {
@@ -196,7 +199,7 @@ body {
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .main .count__title {
@@ -235,6 +238,8 @@ body {
 }
 
 .main .count__pick-counter {
+  display: block;
+  margin: 0 auto;
   font-family: Bebas Neue, sans-serif;
   font-size: 12rem;
   line-height: 9rem;
@@ -247,6 +252,7 @@ body {
   outline: none;
   background-color: transparent;
   padding: 1.6rem 3.6rem;
+  align-self: center;
   border-radius: .6rem;
   background-color: #3596F5;
   font-size: 1.6rem;

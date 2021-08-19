@@ -10880,3 +10880,50 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
+$(() => {
+  let currentFloor = 2
+  let counterSpan = $(".count__pick-counter")
+  let flat = $(".flats path")
+
+  let arrowUp = $(".count__pick-arrow--up")
+  let arrowDown = $(".count__pick-arrow--down")
+
+  counterSpan.text(currentFloor)
+
+  flat.on("mousemove", function () {
+    flat.removeClass('current-floor')
+    currentFloor = $(this).attr("data-floor")
+    counterSpan.text(currentFloor)
+  })
+
+  arrowUp.on("click", function () {
+    if (currentFloor < 18) {
+      currentFloor++
+      
+      let usCurrentFloor = currentFloor.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      })
+    
+      counterSpan.text(usCurrentFloor)
+      counterSpan.text(usCurrentFloor)
+      flat.removeClass('current-floor')
+      $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor')
+    }
+  })
+
+  arrowDown.on("click", function () {
+    if (currentFloor > 2) {
+      currentFloor--
+
+      let usCurrentFloor = currentFloor.toLocaleString("en-US", {
+        minimumIntegerDigits: 2,
+        useGrouping: false,
+      })
+
+      counterSpan.text(usCurrentFloor)
+      flat.removeClass('current-floor')
+      $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor')
+    }
+  })
+})
