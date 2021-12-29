@@ -1,0 +1,310 @@
+@import 'base/_fonts'
+@import 'base/_reset'
+@import 'base/_base'
+
+@import 'base/_mylib'
+@import 'base/_vars'
+// moduls
+// @import 'modules/smart-grid'
+
+// .debug
+//     @include debug(linear-gradient(180deg, rgba(2,0,36,0.5) 0%, rgba(9,9,121,0.5) 35%, rgba(0,212,255,0.5) 100%), none)
+
+.container
+    // max-width: 1440px
+    // margin: 0 auto
+
+.wrapper
+    max-width: 1280px
+    margin: 0 auto
+
+.header
+    background-color: #635854
+
+    .navbar
+        display: flex
+        justify-content: space-between
+
+        &__logo
+            display: flex
+            align-items: center
+
+        &__logo img
+            display: block
+            
+        &__menu-list
+            display: flex
+
+        &__menu-item
+            display: block
+            font-size: 1.6rem
+            line-height: 1.875rem
+            text-align: center
+            padding: 0.9rem 1.6rem
+            transition: 0.2s
+
+            &:not(:last-child)
+                margin-right: 8rem
+
+            &:hover
+                background-color: #3596F5
+
+        &__menu-item a
+            color: $white
+
+        &__contacts
+            display: flex
+            flex-direction: column
+            text-align: right
+            padding-top: 0.8rem
+
+        &__contacts-title
+            font-size: 1.4rem
+            color: $white
+            margin-bottom: 0.6rem
+
+        &__contacts-phone
+            font-size: 17px
+            font-weight: 700
+            color: $white
+
+.main
+    padding-top: 6rem
+    padding-bottom: 10rem
+    border-top: 4px solid #3596F5
+    border-bottom: 4px solid #3596F5
+
+    .wrapper
+        display: flex
+
+    .flats
+        
+        & path
+            opacity: 0
+
+            &:hover
+                cursor: pointer
+                opacity: 1
+
+        .current-floor
+            opacity: 1
+
+    .count
+        display: flex
+        flex-grow: 1
+        flex-direction: column
+        justify-content: center
+        text-align: center
+
+        &__title
+            font-family: Bebas Neue, sans-serif
+            font-size: 3.7rem
+            color: #635854
+
+        &__pick
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 11rem 0
+
+        &__pick-arrow
+            +btn-none()
+
+            &:nth-child(3)
+                transform: rotate(180deg)
+
+        &__pick-arrow svg
+            width: 5rem
+            height: 3rem
+            cursor: pointer
+            fill: #3596F5
+            transition: .2s
+
+            &:hover
+                fill: #2f7dca
+
+        &__pick-counter
+            display: block
+            margin: 0 auto
+            font-family: Bebas Neue, sans-serif
+            font-size: 12rem
+            line-height: 9rem
+            padding: 3.5rem 0
+            color: #635854
+
+
+        &__btn
+            +btn-none()
+            padding: 1.6rem 3.6rem
+            align-self: center
+            border-radius: .6rem
+            background-color: #3596F5
+            font-size: 1.6rem
+            color: $white
+            transition: 0.2s
+            
+
+            &:hover
+                background-color: #2f7dca
+
+.footer
+    padding-top: 5rem
+    padding-bottom: 5.5rem
+    background-color: #D7D7D7
+
+    .wrapper
+        display: flex
+        justify-content: space-between
+
+    &__contacts
+        display: flex
+        align-items: center
+
+    &__phone
+        margin-left: 4rem
+        margin-right: 6rem
+
+    &__phone-title
+        font-size: 1.4rem
+        color: #635854
+
+    &__phone-link
+        font-size: 1.7rem
+        font-weight: 700
+        color: #635854
+
+    &__social-link:not(:last-child)
+            margin-right: 2rem
+
+    &__social-link svg
+        width: 2.4rem
+        height: 2.4rem
+        fill: #635854
+
+        &:hover
+            fill: #3596F5
+
+
+    &__copyright
+        display: flex
+        align-items: center
+
+    &__copyright-list
+        display: flex
+
+        li
+            
+            &:not(:first-child)
+                margin-left: 2rem
+
+    &__copyright-link
+        font-size: 1.6rem
+        text-decoration: underline
+        color: #635854
+
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0, 0.8)
+
+    &__window
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__content
+        display: flex
+
+    &__floor
+        padding: 5rem 6.6rem 6rem 10rem
+        background-color: #EBEBEB
+        text-align: center
+
+    &__floor-title
+        font-family: Bebas Neue, serif
+        font-size: 2.4rem
+        color: $black
+
+    &__floor-floor path
+        opacity: 0
+
+        &:hover
+            opacity: 1
+
+    .current-flat
+        opacity: 1
+
+    &__picker
+        padding: 5rem 7.6rem 6rem 5rem
+        background-color: $white
+
+    &__picker-text
+        max-width: 23rem
+
+    &__picker-title
+        font-family: Bebas Neue, serif
+        font-size: 2.4rem
+        color: $black
+
+    &__picker-list
+        margin-top: 5rem
+        margin-bottom: 5.6rem
+        display: flex
+        flex-direction: column
+
+        & li:not(:last-child)
+                margin-bottom: 1rem
+
+    &__picker-link
+        font-size: 1.6rem
+        color: #635854
+
+        &:hover
+            color: #3596F5
+            text-decoration: underline
+
+    &__current-link
+        color: #3596F5
+        text-decoration: underline
+
+    &__picker-description
+        font-size: 1.6rem
+        font-style: italic
+        color: #635854
+
+    &__exit
+        +btn-none()
+        position: relative
+        width: 2.4rem
+        height: 2.4rem
+        margin-top: 4rem
+        margin-left: -5.4rem
+        background-color: $white
+        
+
+        &:hover
+            .modal__exit-item
+                background-color: red
+
+    &__exit-item
+        position: absolute
+        top: 0
+        left: 0
+        width: 0.3rem
+        height: 2.4rem
+        margin-left: 1.2rem
+        background-color: #3596F5
+
+        &:first-child
+            transform: rotate(45deg)
+            transform-origin: center
+
+        &:last-child
+            transform: rotate(-45deg)
+            transform-origin: center
+
